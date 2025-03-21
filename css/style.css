@@ -270,7 +270,7 @@ nav .navbar button:hover{
 }
 .hero .text ,.hero > button , .features{
     position: relative;
-    z-index: 10;
+    z-index: 2;
 }
 .hero .text h1{
     line-height: 1.2;
