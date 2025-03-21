@@ -74,6 +74,7 @@ body{
     font-family: Poppins, sans-serif;
     width:100%;
     overflow-x: hidden;
+    color: black;
 }
 body.loded{
     overflow: overlay;
@@ -280,6 +281,50 @@ nav .navbar button:hover{
     background-color: transparent;
     color: black;
 }
+/* features */
+.features{
+    background-color: white;
+    border-radius: 25px;
+    margin-inline:10%;
+    transform: translateY(-20%);
+    padding: 20px;
+    display: flex;
+    gap:20px;
+}
+.features-item{
+    display: flex;
+    align-items: center;
+}
+.features-item i{
+    color:white;
+    font-size:32px;
+    background-color: var(--primary-color);
+    padding:30px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.features-item h3{
+    font-size:28px;
+    margin-bottom: 5px;
+}
+.features-item p{
+    font-size:18px;
+    color:#555;
+    margin-bottom: 10px;
+}
+.features-item a{
+    font-size:21px;
+    width: fit-content;
+    padding:2px;
+    border-radius: 2px;
+    border-bottom: 3px solid var(--primary-color);
+    color: black;
+    transition: 0.3s;
+    font-weight: bold;
+}
+.features-item a:hover{
+    color: var(--primary-color);
+}
 @media screen and (max-width:676px){
     .topbar{
         flex-direction: column;
@@ -337,7 +382,7 @@ nav .navbar button:hover{
         margin-top: 16px;
     }
     .hero {
-        padding:20px 10px;
+        padding:30px;
     }
     
     .hero > button{
@@ -348,6 +393,15 @@ nav .navbar button:hover{
     }
     .hero .text h1{
         font-size: 28px;
+    }
+    .features{
+        flex-direction: column;
+        margin-inline:5%;
+
+    }
+    .features-item:not(:last-of-type){
+        padding-bottom: 20px;
+        /* border-bottom: 1px solid #555; */
     }
 }
 @media screen and (min-width:676px){
