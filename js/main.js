@@ -26,12 +26,10 @@ const btn_prev = document.querySelector(".prev");
 const btn_next = document.querySelector(".next");
 let index = 0;
 
-// Function to update the background smoothly
 function updateBackground() {
         hero.style.backgroundImage = `url('${bg[index]}')`; // Change image
 }
 
-// Auto-scroll every 5 seconds
 function autoScroll() {
     index = (index + 1) % bg.length;
     updateBackground();
@@ -42,14 +40,46 @@ window.addEventListener("load", function () {
     setInterval(autoScroll, 5000);
 });
 
-// Previous button click
 btn_prev.addEventListener("click", function () {
     index = (index - 1 + bg.length) % bg.length;
     updateBackground();
 });
 
-// Next button click
 btn_next.addEventListener("click", function () {
     index = (index + 1) % bg.length;
     updateBackground();
 });
+// Testimonials
+const reviewsContainer = document.querySelector('.reviews-container');
+const reviews = document.querySelector('.reviews');
+const leftBtn = document.getElementById('left-btn');
+const rightBtn = document.getElementById('right-btn');
+
+const reviewWidth = reviewsContainer.clientWidth; // Get screen width
+let scrollAmount = 0;
+
+function scrollByLeft() {
+    if (scrollAmount === 0) {
+        scrollAmount = reviews.scrollWidth - reviewWidth; // Jump to last
+    } else {
+        scrollAmount -= reviewWidth;
+    }
+    reviews.style.transform = `translateX(-${scrollAmount}px)`;
+}
+
+function scrollByRight() {
+    if (scrollAmount >= reviews.scrollWidth - reviewWidth) {
+        scrollAmount = 0; // Jump back to the start
+    } else {
+        scrollAmount += reviewWidth;
+    }
+    reviews.style.transform = `translateX(-${scrollAmount}px)`;
+}
+
+leftBtn.addEventListener('click', scrollByLeft);
+rightBtn.addEventListener('click', scrollByRight);
+
+// Auto-scroll every 5 seconds
+setInterval(scrollByRight, 5000);
+
+

@@ -70,8 +70,8 @@ body{
     color:var(--white);
     font-size:var(--fontSize-body-4);
     font-weight:var(--weight-regular);
+    font-family: "Inter", sans-serif;
     line-height:var(--lineHeight-5);
-    font-family: Poppins, sans-serif;
     width:100%;
     overflow-x: hidden;
     color: black;
@@ -392,24 +392,27 @@ nav .navbar button:hover{
 .aboutUs .text div a:hover{
     background-color: transparent;
 }
-.services > span{
+.services > span, .benefits > .title span ,.testimonials >span{
     color: var(--primary-color);
     font-size: 21px;
     text-transform: uppercase;
     margin-bottom:10px;
+    align-items: center;
+    display: flex;
 }
-.services > span i{
+.services > span i,.benefits > .title span i , .testimonials >span i{
     margin-right: 6px;
     font-size: 28px;
 }
-.services .title{
+.services .title {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 70px;
 }
-.services .title h2{
+.services .title h2,.benefits h2,.testimonials .title h2{
     font-weight: bold;
+    line-height: 1.2;
 }
 .services .title a{
     font-size: 18px;
@@ -431,7 +434,7 @@ nav .navbar button:hover{
 }
 .services .card{
     padding: 20px;
-    background-color: #bee3ef;
+    background-color: #ddf2f9;
     border-radius: 12px;
     transition: 0.3s background-color,0.3s transform;
     border: transparent 2px solid;
@@ -477,6 +480,123 @@ nav .navbar button:hover{
 .services .card:hover a{
     color: var(--primary-color);
 }
+.benefits{
+    display: flex;
+    justify-content: space-between;
+}
+.benefits p{
+    color: #555;
+}
+.benefits ul li{
+    width: 600px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--primary-color);
+    margin-bottom: 20px;
+    background: #ddf2f9;
+    transition: 0.3s box-shadow;
+}
+.benefits ul li:hover{
+    background: transparent;
+    box-shadow: #555 0px 2px 5px;
+}
+.benefits ul li >i{
+    font-size: 32px;
+    color: var(--primary-color);
+}
+.benefits ul li span{
+    font-size: 18px;
+    margin-inline:20px;
+}
+.benefits ul li a{
+    color: white;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    position: relative;
+    margin-left: auto;
+}
+.benefits ul li a i{
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 21px;
+}
+
+.testimonials {
+    overflow: hidden;
+}
+.testimonials .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+}
+.reviews-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.reviews {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    transition: transform 0.5s ease-in-out; 
+}
+.testimonials .reviews .review{
+    background-color: white;
+    border-radius: 16px;
+    padding: 25px;
+}
+.testimonials .reviews .review > i {
+    font-size: 48px;
+    color: #07306e;
+    position: relative;
+    margin-bottom: 40px;
+    z-index: 1;
+}
+
+.testimonials .reviews .review > i::after {
+    content: "\f10d"; 
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    font-size: 48px;
+    color: #5D9CEC;
+    position: absolute;
+    left:3px;
+    top:5px;
+    z-index: -1;
+}
+.testimonials .reviews .review p{
+    font-size:16px;
+    margin-bottom: 20px;
+}
+.testimonials .reviews .review .personne{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.testimonials .reviews .review .personne img{
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+}
+.testimonials .reviews .review .personne i{
+    color: #FFD700;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.testimonials .reviews .review .personne h3{
+    font-size: 18px;
+}
+
+
 @media screen and (max-width:676px){
     .topbar{
         flex-direction: column;
@@ -571,17 +691,31 @@ nav .navbar button:hover{
     .services{
         text-align: center;
     }
+    .services .cards {
+        justify-content: center;
+    }
     .services .title{
         flex-direction: column;
     }
-    .services .title h2{
+    .services .title h2,.benefits h2,.testimonials .title h2{
         font-size: 28px;
         margin-bottom: 10px;
     }
     .services .title a{
         width:100%;
     }
+    .benefits{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .testimonials .title div{
+        display: none;
+    }
+    .testimonials .reviews .review{
+        min-width: 100%;
+    }
 }
+
 @media screen and (min-width:676px){
     .topbar{
         justify-content: space-between;
@@ -636,7 +770,26 @@ nav .navbar button:hover{
     .aboutUs .text div ul li{
         width:50%;
     }
-    .services .title h2{
+    .services .title h2,.benefits h2,.testimonials .title h2{
         font-size: 48px;
+        margin-bottom: 5px;
+    }
+    .benefits{
+        gap: 60px;
+    }
+    .testimonials .title div{
+        display: flex;
+        gap:30px;
+    }
+    .testimonials .title div button{
+        width: 40px;
+        height: 40px;
+        background-color: #ddf2f9;
+        border-radius: 6px;
+        color: var(--primary-color);
+        font-size: 21px;
+    }
+    .testimonials .reviews .review{
+        min-width: 380px;
     }
 }
