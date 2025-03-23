@@ -11,7 +11,7 @@ const navBar = document.querySelector(".navbar");
 navBtn.addEventListener("click", function () {
     if (navBtn.classList.contains("active")) {
         navBtn.classList.remove("active");
-        navBar.classList.remove("active"); // Fix: Remove "active" from navBar when closing
+        navBar.classList.remove("active"); 
         navBtn.innerHTML = `<i class="fa-solid fa-bars"></i>`; 
     } else {
         navBtn.classList.add("active");
@@ -81,5 +81,3 @@ rightBtn.addEventListener('click', scrollByRight);
 
 // Auto-scroll every 5 seconds
 setInterval(scrollByRight, 8000);
-
-
