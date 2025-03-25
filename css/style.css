@@ -1244,14 +1244,14 @@ input:checked + .slider:before {
     gap: 50px;
     padding-block-end: 220px;
 }
-.about .about::after{
+.about .about::after,.services-body main > .title-section::after{
     position: absolute;
     content:"";
     top:0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(7, 48, 110,0.6);
+    background-color: rgba(7, 48, 110,0.8);
 }
 .about .about div{
     position: relative;
@@ -1270,7 +1270,7 @@ input:checked + .slider:before {
     font-size: 28px;
     margin-right: 10px;
 }
-.about .about div.title h1{
+.about .about div.title h1,.services-body main > .title-section div h1{
     color:white;
     line-height: 1.4;
     font-size: 42px;
@@ -1300,12 +1300,12 @@ input:checked + .slider:before {
     height:600px;
     margin-bottom: -180px;
 }
-.about .book {
+.about .book , .services-body .book{
     color: #000;
     padding-block: 50px;
     text-align: center;
 }
-.about .book span{
+.about .book span,.services-body main > .title-section div span,.services-body .book span{
     font-size: 28px;
     color: var(--primary-color);
     display: flex;
@@ -1313,16 +1313,16 @@ input:checked + .slider:before {
     justify-content: center;
     margin-bottom: 20px;
 }
-.about .book h2{
+.about .book h2,.services-body .book h2{
     font-size: 48px;
     line-height: 1.6;
     margin-bottom: 20px;
 }
-.about .book span i{
+.about .book span i,.services-body main > .title-section div span i,.services-body .book span i{
     font-size: 32px;
     margin-inline:10px;
 }
-.about .book button{
+.about .book button,.services-body .book button{
     margin-inline:auto;
     padding:18px 32px;
     background-color: var(--primary-color);
@@ -1333,7 +1333,7 @@ input:checked + .slider:before {
     transition:background-color 0.3s;
     font-size: 18px;
 }
-.about .book button:hover{
+.about .book button:hover,.services-body .book button:hover{
     background-color: transparent;
     color: #000;
 }
@@ -1349,7 +1349,7 @@ input:checked + .slider:before {
         transform: translateY(-30px);
         margin-bottom: -20px;
     }
-    .about .about div.title h1{
+    .about .about div.title h1,.services-body main > .title-section div h1{
         font-size: 28px;
     }
     .about .about p{
@@ -1358,13 +1358,27 @@ input:checked + .slider:before {
     .about .about button{
        width: 100%;
     }
-    .about .book span i{
+    .about .book span i,.services-body main > .title-section div span i,.services-body .book span i{
         font-size: 21px;
     }
-    .about .book span {
+    .about .book span ,.services-body main > .title-section div span,.services-body .book span{
         font-size: 18px;
     }
-    .about .book h2{
+    .about .book h2,.services-body .book h2{
         font-size: 28px;
     }
+}
+.services-body main > .title-section{
+    background-image:url(../images/hospital.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-block: 80px;
+    position: relative;
+}
+.services-body main > .title-section div{
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
 }
