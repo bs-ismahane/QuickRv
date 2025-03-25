@@ -1155,6 +1155,14 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(48px);
 }
+@media screen and (max-width:400px){
+    .form-box {
+        padding: 20px;
+    }
+    .toggel-panel h1{
+        font-size:28px;
+    }
+}
 @media screen and (max-width:676px){
     .login .container{
         height: calc(100vh - 40px);
@@ -1199,18 +1207,164 @@ input:checked + .slider:before {
         left: 0;
         top:70%;
     }
-
+    .toggle-box {
+        margin-block: 20px;
+    }
+    .input-box{
+        position: relative;
+        margin:15px 0;
+    }
+    .switch {
+        height: 20px;
+        width:60px;
+    }
+    .slider:before {
+        height: 16px;
+        left:2px;
+        width: 16px;
+        bottom: 2px;
+    }
+    input:checked + .slider:before {
+        transform: translateX(40px);
+    }
 }
 @media screen and (min-width:676px){
     .login .container.active .toggel-box::before {
         left: 50%;
     }
 }
-@media screen and (max-width:400px){
-    .form-box {
-        padding: 20px;
+.about .about{
+    background-image:url(../images/hospital.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-block: 80px;
+    position: relative;
+    display: flex;
+    gap: 50px;
+    padding-block-end: 220px;
+}
+.about .about::after{
+    position: absolute;
+    content:"";
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 48, 110,0.6);
+}
+.about .about div{
+    position: relative;
+    z-index: 2;
+}
+.about .about div.title {
+    min-width: 50%;
+}
+.about .about div.title span{
+    color: var(--primary-color);
+    font-size:21px;
+    display: flex;
+    align-items: center;
+}
+.about .about div.title span i{
+    font-size: 28px;
+    margin-right: 10px;
+}
+.about .about div.title h1{
+    color:white;
+    line-height: 1.4;
+    font-size: 42px;
+}
+.about .about div.info{
+    color:white;
+    font-size: 24px;
+    line-height: 1.7;
+}
+.about .about div.info button{
+    padding:12px;
+    background-color: var(--primary-color);
+    margin-block: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    color: white;
+    transition: 0.3s;
+}
+.about .about div.info button:hover{
+    background-color: transparent;
+}
+.about main > img{
+    width: 80%;
+    margin-inline: auto;
+    transform: translateY(-200px);
+    border-radius:20px;
+    height:600px;
+    margin-bottom: -180px;
+}
+.about .book {
+    color: #000;
+    padding-block: 50px;
+    text-align: center;
+}
+.about .book span{
+    font-size: 28px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.about .book h2{
+    font-size: 48px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.about .book span i{
+    font-size: 32px;
+    margin-inline:10px;
+}
+.about .book button{
+    margin-inline:auto;
+    padding:18px 32px;
+    background-color: var(--primary-color);
+    margin-block: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    color: white;
+    transition:background-color 0.3s;
+    font-size: 18px;
+}
+.about .book button:hover{
+    background-color: transparent;
+    color: #000;
+}
+@media screen and (max-width:676px){
+    .about .about{
+        flex-direction: column;
+        gap: 0;
+        padding-block-end: 50px;
     }
-    .toggel-panel h1{
-        font-size:28px;
+    .about main > img{
+        width: 90%;
+        height:auto;
+        transform: translateY(-30px);
+        margin-bottom: -20px;
+    }
+    .about .about div.title h1{
+        font-size: 28px;
+    }
+    .about .about p{
+        font-size: 18px;
+    }
+    .about .about button{
+       width: 100%;
+    }
+    .about .book span i{
+        font-size: 21px;
+    }
+    .about .book span {
+        font-size: 18px;
+    }
+    .about .book h2{
+        font-size: 28px;
     }
 }
