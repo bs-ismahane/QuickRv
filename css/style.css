@@ -293,7 +293,6 @@ nav .navbar li:last-of-type a:hover{
 }
 .hero .text button:hover{
     background-color: transparent;
-    color: black;
 }
 /* features */
 .features{
@@ -777,7 +776,7 @@ footer > div:last-of-type a:hover{
     .features{
         flex-direction: column;
         margin-inline:5%;
-
+        transform: translateY(-10%);
     }
     .features-item:not(:last-of-type){
         padding-bottom: 20px;
@@ -1244,7 +1243,7 @@ input:checked + .slider:before {
     gap: 50px;
     padding-block-end: 220px;
 }
-.about .about::after,.services-body main > .title-section::after{
+.about .about::after,.title-section::after{
     position: absolute;
     content:"";
     top:0;
@@ -1270,7 +1269,7 @@ input:checked + .slider:before {
     font-size: 28px;
     margin-right: 10px;
 }
-.about .about div.title h1,.services-body main > .title-section div h1{
+.about .about div.title h1,.title-section div h1,.contact-body .title h1{
     color:white;
     line-height: 1.4;
     font-size: 42px;
@@ -1305,7 +1304,7 @@ input:checked + .slider:before {
     padding-block: 50px;
     text-align: center;
 }
-.about .book span,.services-body main > .title-section div span,.services-body .book span{
+.about .book span,.title-section div span,.services-body .book span,.contact-body .title span{
     font-size: 28px;
     color: var(--primary-color);
     display: flex;
@@ -1318,7 +1317,7 @@ input:checked + .slider:before {
     line-height: 1.6;
     margin-bottom: 20px;
 }
-.about .book span i,.services-body main > .title-section div span i,.services-body .book span i{
+.about .book span i,.title-section div span i,.services-body .book span i,.contact-body .title span i{
     font-size: 32px;
     margin-inline:10px;
 }
@@ -1349,7 +1348,7 @@ input:checked + .slider:before {
         transform: translateY(-30px);
         margin-bottom: -20px;
     }
-    .about .about div.title h1,.services-body main > .title-section div h1{
+    .about .about div.title h1,.title-section div h1,.contact-body .title h1{
         font-size: 28px;
     }
     .about .about p{
@@ -1358,17 +1357,17 @@ input:checked + .slider:before {
     .about .about button{
        width: 100%;
     }
-    .about .book span i,.services-body main > .title-section div span i,.services-body .book span i{
+    .about .book span i, .title-section div span i,.services-body .book span i,.contact-body .title span i{
         font-size: 21px;
     }
-    .about .book span ,.services-body main > .title-section div span,.services-body .book span{
+    .about .book span ,.title-section div span,.services-body .book span,.contact-body .title span{
         font-size: 18px;
     }
     .about .book h2,.services-body .book h2{
         font-size: 28px;
     }
 }
-.services-body main > .title-section{
+.title-section{
     background-image:url(../images/hospital.jpg);
     background-size:cover;
     background-position: center;
@@ -1376,9 +1375,96 @@ input:checked + .slider:before {
     padding-block: 80px;
     position: relative;
 }
-.services-body main > .title-section div{
+.title-section div{
     position: relative;
     z-index: 2;
     color: white;
     text-align: center;
+}
+
+/* contact */
+.contact-body .title{
+    text-align: center;
+}
+.contact-body .title h1{
+    color: #000;
+    margin-bottom: 5px;
+}
+.contact-body .title p{
+    font-size: 18px;
+    color: #555;
+}
+.contact-body .content form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto) 1fr 1fr; 
+    gap:20px;
+}
+.contact-body .content form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(2, auto) 1fr 1fr; 
+    column-gap: 20px;
+}
+
+
+.contact-body .content form > *:nth-child(5),
+.contact-body .content form > *:nth-child(6) {
+    grid-column: span 2;
+}
+
+.contact-body .content .input-box label{
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.contact-body .content .input-box{
+    position: relative;
+    margin-bottom: 0px;
+}
+.contact-body .content .input-box i{
+    font-size: 21px;
+    width:24px;
+    color:var(--primary-color);
+    position: absolute;
+    left: 15px;
+    top: 35px;
+    transform: translateY(50%);
+}
+.contact-body .content .input-box input,textarea{
+    height:54px;
+    padding-left:40px;
+    border: var(--primary-color) 2px solid;
+    background-color: white;
+    border-radius: 12px;
+}
+.contact-body .content .input-box textarea{
+    width: 100%;
+    min-height: 100px;
+    max-width: 100%;
+    max-height: 250px;
+    padding-top: 10px;
+}
+.contact-body .content button{
+    font-size: 18px;
+    padding: 16px 35px;
+    background-color:var(--primary-color);
+    color: white;
+    border-radius:12px;
+    border: 2px solid var(--primary-color);
+    transition: 0.3s ;
+    width: fit-content;
+    height: fit-content;
+}
+.contact-body .content button:hover{
+    background-color:transparent;
+}
+@media screen and (max-width:676px){
+    .contact-body .content form {
+        display: block; 
+    }
+    .contact-body .content form .input-box{
+        margin-bottom: 10px;
+    }   
 }
